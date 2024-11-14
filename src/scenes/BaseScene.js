@@ -10,6 +10,7 @@ class BaseScene extends Phaser.Scene {
   create() {
     this.createBackGround();
     this.createCursor();
+    this.backGroundMusic();
   }
 
   createBackGround() {
@@ -20,15 +21,24 @@ class BaseScene extends Phaser.Scene {
     if (this.customCursor) return;
 
     this.input.setDefaultCursor("none");
-    this.customCursor = this.add
+    this.customCursor = this.physics.add
       .image(this.input.activePointer.x, this.input.activePointer.y, "cursor")
       .setScale(0.04)
-      .setOrigin(0.5, 0.5)
+      .setOrigin(0.25)
       .setDepth(1000);
+
     this.input.on("pointermove", (pointer) => {
       this.customCursor.x = pointer.x;
       this.customCursor.y = pointer.y;
     });
+  }
+
+  backGroundMusic() {
+    this.backgroundMusic = this.sound.add("gameSound", {
+      loop: true,
+      volume: 1,
+    });
+    this.backgroundMusic.play();
   }
 
   createMenu(menu, setupMenuEvents) {

@@ -24,12 +24,13 @@ class SplashScene extends BaseScene {
     this.tweens.add({
       targets: loadingImage,
       yoyo: true,
-      scale: 0.25,
+      scale: 0.22,
       duration: 500,
       repeat: -1,
     });
 
     this.time.delayedCall(5000, () => {
+      this.scene.stop("SplashScene");
       this.scene.start("MenuScene");
     });
   }

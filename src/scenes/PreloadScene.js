@@ -21,6 +21,7 @@ class PreloadScene extends Phaser.Scene {
     this.load.image("ground_stones", "assets/Ground 2.png");
     this.load.image("ground_stones2", "assets/Ground 3.png");
     this.load.image("ground_dirt", "assets/Ground 4.png");
+    this.load.image("groundDirt", "assets/Ground 4.png");
 
     this.load.image("seed", "assets/Seed.png");
     this.load.image("cursor", "assets/Cursor.png");
