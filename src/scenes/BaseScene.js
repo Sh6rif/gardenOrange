@@ -18,8 +18,6 @@ class BaseScene extends Phaser.Scene {
   }
 
   createCursor() {
-    if (this.customCursor) return;
-
     this.input.setDefaultCursor("none");
     this.customCursor = this.physics.add
       .image(this.input.activePointer.x, this.input.activePointer.y, "cursor")

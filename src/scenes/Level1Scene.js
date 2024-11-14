@@ -9,7 +9,6 @@ class Level1Scene extends BaseScene {
 
   create() {
     super.create();
-    super.createCursor();
     this.createStartGame();
     this.createFarm();
     this.setupSeed();
@@ -216,7 +215,6 @@ class Level1Scene extends BaseScene {
       .setScale(0.15)
       .setDepth(900);
     this.time.delayedCall(5000, () => {
-      super.createCursor();
       this.scene.stop("Level1Scene");
       this.scene.start("MenuScene");
     });

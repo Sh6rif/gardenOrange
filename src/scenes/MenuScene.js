@@ -11,7 +11,6 @@ class MenuScene extends BaseScene {
 
   create() {
     super.create();
-    super.createCursor();
     this.createMenu(this.menu, this.setupMenuEvents.bind(this));
   }
 
